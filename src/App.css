@@ -4,6 +4,10 @@ form {
   width: 200px;
 }
 
+span {
+  color: red;
+}
+
 .App {
   display: flex;
   justify-content: center;
