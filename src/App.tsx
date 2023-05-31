@@ -27,23 +27,27 @@ function App() {
       path: ["confirmPassword"],
     });
 
-  const {} = useForm({ resolver: zodResolver(schema) });
+  const { register, handleSubmit } = useForm({ resolver: zodResolver(schema) });
 
   return (
     <div className="App">
       <form>
         <label htmlFor="first-name">First Name: </label>
-        <input id="first-name" type="text" />
+        <input id="first-name" type="text" {...register("firstName")} />
         <label htmlFor="last-name">Last Name: </label>
-        <input id="last-name" type="text" />
+        <input id="last-name" type="text" {...register("lastName")} />
         <label htmlFor="email">Email: </label>
-        <input id="email" type="email" />
+        <input id="email" type="email" {...register("email")} />
         <label htmlFor="age">Age: </label>
-        <input id="age" type="number" />
+        <input id="age" type="number" {...register("age")} />
         <label htmlFor="password">Password: </label>
-        <input id="password" type="password" />
+        <input id="password" type="password" {...register("password")} />
         <label htmlFor="confirm-password">Confirm Password: </label>
-        <input id="confirm-password" type="password" />
+        <input
+          id="confirm-password"
+          type="password"
+          {...register("confirmPassword")}
+        />
 
         <input type="submit" />
       </form>
