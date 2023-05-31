@@ -45,7 +45,11 @@ function App() {
         <label htmlFor="email">Email: </label>
         <input id="email" type="email" {...register("email")} />
         <label htmlFor="age">Age: </label>
-        <input id="age" type="number" {...register("age")} />
+        <input
+          id="age"
+          type="number"
+          {...register("age", { valueAsNumber: true })}
+        />
         <label htmlFor="password">Password: </label>
         <input id="password" type="password" {...register("password")} />
         <label htmlFor="confirm-password">Confirm Password: </label>
